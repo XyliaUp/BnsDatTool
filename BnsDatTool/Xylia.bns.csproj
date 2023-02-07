@@ -1,0 +1,160 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <OutputPath>..\..\..\..\..\..\..\Publish\Debug\</OutputPath>
+    <LangVersion>9.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>F:\Resources\文档\Programming\Publish\Bin\Xylia.bns.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <LangVersion>9.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\..\Publish\Bin\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>none</DebugType>
+    <LangVersion>9.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <LangVersion>9.0</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Models\BinData\Analyse\Serialize\**" />
+    <Compile Remove="Models\BinData\Analyse\Struct\Input\**" />
+    <Compile Remove="Models\BinData\Analyse\Struct\Output\**" />
+    <Compile Remove="Models\BinData\Analyse\Struct\Seri\**" />
+    <EmbeddedResource Remove="Models\BinData\Analyse\Serialize\**" />
+    <EmbeddedResource Remove="Models\BinData\Analyse\Struct\Input\**" />
+    <EmbeddedResource Remove="Models\BinData\Analyse\Struct\Output\**" />
+    <EmbeddedResource Remove="Models\BinData\Analyse\Struct\Seri\**" />
+    <None Remove="Models\BinData\Analyse\Serialize\**" />
+    <None Remove="Models\BinData\Analyse\Struct\Input\**" />
+    <None Remove="Models\BinData\Analyse\Struct\Output\**" />
+    <None Remove="Models\BinData\Analyse\Struct\Seri\**" />
+    <Page Remove="Models\BinData\Analyse\Serialize\**" />
+    <Page Remove="Models\BinData\Analyse\Struct\Input\**" />
+    <Page Remove="Models\BinData\Analyse\Struct\Output\**" />
+    <Page Remove="Models\BinData\Analyse\Struct\Seri\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Util\Sort\AttributeInfoSort.cs" />
+    <Compile Remove="Util\Sort\OutputCellSort.cs" />
+    <Compile Remove="Util\Sort\SeriDataSortById.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="BnsBinTool.Core">
+      <HintPath>..\..\..\..\剑灵\BnsBinTool-master\Src\BnsBinTool.Core\bin\Debug\net6.0\win-x64\BnsBinTool.Core.dll</HintPath>
+    </Reference>
+    <Reference Update="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Numerics">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Update="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <Content Include="Models\DatData\Third\bnscompression.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MetroFramework" Version="1.2.0.3" />
+    <PackageReference Include="Xylia" Version="1.0.3.5" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>@echo off
+::获取日期
+::set datevar=%25date:~0,4%25%25date:~5,2%25%25date:~8,2%25
+
+::获取时间 24小时制
+::set timevar=%25time:~0,2%25时%25time:~3,2%25分%25time:~6,2%25
+::if /i %25timevar%25 LSS 10 (
+::set timevar=0%25time:~1,1%25时%25time:~3,2%25分%25time:~6,2%25
+::)
+
+
+::xcopy "F:\Resources\文档\Developer\Programming\C#\BnsDatTool\工程" "F:::\Resources\文档\Developer\Programming\C#\BnsDatTool\备份\BnsDatTool-::%25datevar%25\%25timevar%25\"  /e  /y /d /s
+
+</PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
